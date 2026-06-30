@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * ============================================================
+ *  DESIGN TOKENS
+ *  Two distinct, intentional palettes (light + dark).
+ *  Edit these HSL triples to re-skin the entire site.
+ * ============================================================
+ */
+@layer base {
+  :root {
+    /* Light theme — warm paper white with electric indigo accent */
+    --bg: 250 50% 99%;
+    --bg-soft: 250 40% 97%;
+    --surface: 0 0% 100%;
+    --surface-2: 250 35% 96%;
+    --border: 250 20% 88%;
+    --fg: 250 30% 12%;
+    --muted: 250 12% 38%;
+    --faint: 250 10% 55%;
+    --accent: 256 90% 60%;
+    --accent-2: 190 95% 45%;
+    --accent-fg: 0 0% 100%;
+  }
+
+  .dark {
+    /* Dark theme — deep space navy/charcoal, not pure black */
+    --bg: 240 24% 6%;
+    --bg-soft: 240 22% 8%;
+    --surface: 240 20% 10%;
+    --surface-2: 240 18% 13%;
+    --border: 240 14% 20%;
+    --fg: 250 30% 96%;
+    --muted: 245 12% 70%;
+    --faint: 245 10% 52%;
+    --accent: 256 95% 70%;
+    --accent-2: 185 95% 55%;
+    --accent-fg: 240 30% 8%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: hsl(var(--bg));
+    color: hsl(var(--fg));
+    font-feature-settings: "ss01", "cv01", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: hsl(var(--accent) / 0.3);
+    color: hsl(var(--fg));
+  }
+
+  /* Themed, visible focus states (accessibility) */
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--bg-soft));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+    border: 2px solid hsl(var(--bg-soft));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.6);
+  }
+}
+
+@layer components {
+  .container-edge {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .glass {
+    background: hsl(var(--surface) / 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  /* Gradient text for headings */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--fg)),
+      hsl(var(--accent)),
+      hsl(var(--accent-2)),
+      hsl(var(--fg))
+    );
+    background-size: 200% auto;
+  }
+
+  .text-accent-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--accent)),
+      hsl(var(--accent-2))
+    );
+  }
+
+  /* Mono "kicker" label used above section titles */
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-border bg-surface/70 backdrop-blur-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/70 px-3 py-1 font-mono text-xs text-muted transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Subtle film grain overlay */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Respect reduced-motion: disable non-essential animation globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
