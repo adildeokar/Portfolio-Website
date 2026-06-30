@@ -9,6 +9,7 @@ import { ParticleNetwork } from "@/components/visual/ParticleNetwork";
 import { GradientBlobs } from "@/components/ui/Backdrop";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ResumeButton } from "@/components/ui/ResumeButton";
+import { SocialButtons } from "@/components/ui/SocialButtons";
 import { RoleRotator } from "./RoleRotator";
 
 export function Hero() {
@@ -83,6 +84,7 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </MagneticButton>
               <ResumeButton variant="outline" />
+              <SocialButtons size="md" />
             </motion.div>
 
             <motion.div
@@ -96,7 +98,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: profile image (SQUARE placeholder — swap with hi-res square photo) */}
+          {/* Right: profile image (SQUARE placeholder, swap with hi-res square photo) */}
           <motion.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}

@@ -2,7 +2,7 @@ import type { Award, CertGroup } from "./types";
 
 /** Top-tier awards & professional titles (badge/trophy styled). */
 export const awards: Award[] = [
-  { title: "Smart India Hackathon — SIH 2024", org: "Winner", year: "2024" },
+  { title: "Smart India Hackathon (SIH 2024)", org: "Winner", year: "2024" },
   { title: "IEEE INNOVATEX 2026", org: "Winner", year: "2026" },
   { title: "Innovation 2k25", org: "Winner · College of Engineering Phaltan", year: "2025" },
   { title: "We Pitch", org: "2nd Runner-Up · MIT ADTU Pune" },
@@ -10,8 +10,8 @@ export const awards: Award[] = [
 
 /** Highlighted "headline" professional certifications. */
 export const featuredCerts: string[] = [
-  "IBM Certified — AI Product Manager",
-  "Google Cloud — Generative AI Leader",
+  "IBM Certified: AI Product Manager",
+  "Google Cloud: Generative AI Leader",
   "AWS Certified Data Engineer (Exam Prep DEA-C01)",
 ];
 
@@ -57,6 +57,6 @@ export const certGroups: CertGroup[] = [
   {
     issuer: "Other",
     count: 1,
-    certs: ["University of Pennsylvania — Computational Thinking for Problem Solving"],
+    certs: ["University of Pennsylvania: Computational Thinking for Problem Solving"],
   },
 ];

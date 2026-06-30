@@ -1,5 +1,5 @@
 /**
- * Next.js config — configured for fully static export so the site can be
+ * Next.js config, configured for fully static export so the site can be
  * hosted for free on Vercel OR GitHub Pages with zero backend.
  *
  * GitHub Pages note:

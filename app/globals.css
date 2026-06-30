@@ -11,7 +11,7 @@
  */
 @layer base {
   :root {
-    /* Light theme — warm paper white with electric indigo accent */
+    /* Light theme: warm paper white with electric indigo accent */
     --bg: 250 50% 99%;
     --bg-soft: 250 40% 97%;
     --surface: 0 0% 100%;
@@ -26,7 +26,7 @@
   }
 
   .dark {
-    /* Dark theme — deep space navy/charcoal, not pure black */
+    /* Dark theme: deep space navy/charcoal, not pure black */
     --bg: 240 24% 6%;
     --bg-soft: 240 22% 8%;
     --surface: 240 20% 10%;

@@ -24,7 +24,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "AWS",
       "Azure (App Service, Static Web Apps, Postgres)",
-      "CI/CD — GitHub Actions",
+      "CI/CD with GitHub Actions",
       "Docker",
       "Post-Production Deployment",
     ],

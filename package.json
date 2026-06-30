@@ -2,7 +2,7 @@
   "name": "adil-deokar-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Production-grade animated portfolio for Adil Deokar — AI Developer / Software Developer / AI Product Manager.",
+  "description": "Production-grade animated portfolio for Adil Deokar, AI Developer / Software Developer / AI Product Manager.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

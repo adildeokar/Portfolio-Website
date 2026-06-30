@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Animated gradient blobs — soft depth behind sections. CSS-only, performant. */
+/** Animated gradient blobs for soft depth behind sections. CSS-only, performant. */
 export function GradientBlobs({ className }: { className?: string }) {
   return (
     <div

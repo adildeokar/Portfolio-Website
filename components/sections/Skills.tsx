@@ -32,7 +32,7 @@ export function Skills() {
             <span className="text-accent-gradient">capabilities</span>
           </>
         }
-        description="A full-stack of AI, systems, and product skills — grouped by where they live in the build."
+        description="A full-stack of AI, systems, and product skills, grouped by where they live in the build."
       />
 
       <RevealGroup className="grid gap-5 sm:grid-cols-2">

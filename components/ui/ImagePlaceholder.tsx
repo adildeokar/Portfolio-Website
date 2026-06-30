@@ -15,7 +15,7 @@ interface SmartImageProps {
 
 /**
  * Renders an image, but falls back to a styled "coming soon" placeholder if the
- * file is missing — so layouts always look complete before real screenshots
+ * file is missing, so layouts always look complete before real screenshots
  * are dropped in. Uses a plain <img> (works with static export + unoptimized).
  */
 export function SmartImage({

@@ -31,8 +31,8 @@ const siteUrl = "https://adildeokar.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} — ${site.roles.join(" · ")}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.roles.join(" · ")}`,
+    template: `%s | ${site.name}`,
   },
   description: bio,
   keywords: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: `${site.name} — ${site.roles.join(" · ")}`,
+    title: `${site.name} | ${site.roles.join(" · ")}`,
     description: bio,
     siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.roles.join(" · ")}`,
+    title: `${site.name} | ${site.roles.join(" · ")}`,
     description: bio,
   },
   robots: { index: true, follow: true },

@@ -26,7 +26,7 @@ export function Certifications() {
             <span className="text-accent-gradient">certifications</span>
           </>
         }
-        description="3 hackathon wins, 20 certifications across IBM, AWS & Google Cloud — grouped so you can scan, not scroll."
+        description="3 hackathon wins, 20 certifications across IBM, AWS & Google Cloud, grouped so you can scan, not scroll."
       />
 
       {/* Awards */}

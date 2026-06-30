@@ -6,14 +6,14 @@ import type { Project, ProjectCategory } from "./types";
  * 2. Give it a unique `slug`.
  * 3. Drop images into  /public/images/projects/<slug>/  and reference them
  *    in `images` (a styled placeholder shows automatically until they exist).
- * That's it — the Projects page, filters, and detail view update themselves.
+ * That's it. The Projects page, filters, and detail view update themselves.
  * ──────────────────────────────────────────────────────────────────────
  */
 
 export const projects: Project[] = [
   {
     slug: "krew",
-    title: "Krew — Multi-Agent AI Organization",
+    title: "Krew: Multi-Agent AI Organization",
     blurb:
       "A manager-led team of specialized AI agents that collaborate, critique, and hand off tasks.",
     highlight: "National Hackathon Winner · 700+ teams",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
   },
   {
     slug: "clause-ai",
-    title: "Clause AI — Legal Multi-Agentic System",
+    title: "Clause AI: Legal Multi-Agentic System",
     blurb:
       "AI-driven contract analysis that detects risk, bias, and ambiguity to support fair negotiations.",
     bullets: [
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     slug: "rake-optima",
-    title: "SIH 2025 — Rake Optima",
+    title: "SIH 2025: Rake Optima",
     blurb:
       "Cloud-native rake-planning optimization engine with disruption-aware re-optimization.",
     metric: "90–95% wagon utilization · ~30% logistics cost reduction",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ai-crowd-flow",
-    title: "AI Crowd Flow Analytical System — Jetson Orin",
+    title: "AI Crowd Flow Analytical System (Jetson Orin)",
     blurb:
       "Edge AI for real-time crowd counting, flow analytics, and congestion alerts across camera streams.",
     bullets: [
@@ -93,12 +93,12 @@ export const projects: Project[] = [
   },
   {
     slug: "image-upscaling-ncnn",
-    title: "Image Upscaling NCNN — Jetson Orin",
+    title: "Image Upscaling NCNN (Jetson Orin)",
     blurb:
       "Vulkan-accelerated super-resolution at the edge with INT8/FP16 optimized pipelines.",
     bullets: [
       "Deployed NCNN-based super-resolution models on Jetson Orin for real-time image upscaling using Vulkan-accelerated inference, achieving low-latency enhancement at the edge.",
-      "Optimized pipelines with INT8/FP16 paths and tiling/batch strategies to preserve detail while reducing memory bandwidth — smooth upscaling for camera streams and offline batches.",
+      "Optimized pipelines with INT8/FP16 paths and tiling/batch strategies to preserve detail while reducing memory bandwidth, enabling smooth upscaling for camera streams and offline batches.",
     ],
     tech: ["NCNN", "Vulkan", "Jetson Orin", "Super-Resolution", "INT8/FP16"],
     categories: ["Edge AI"],
@@ -110,13 +110,13 @@ export const projects: Project[] = [
   },
   {
     slug: "fedmed",
-    title: "FedMed — Federated Learning for Healthcare Time Series",
+    title: "FedMed: Federated Learning for Healthcare Time Series",
     blurb:
       "Distributed ML platform with centralized, distributed, and federated training workflows.",
     bullets: [
       "Built an end-to-end distributed machine learning platform with centralized, distributed, and federated training workflows in Python and React.",
       "Developed real-time WebSocket monitoring to visualize training progress, model metrics, client status, and system topology through interactive dashboards.",
-      "Implemented evaluation analytics — confusion matrix, throughput/latency trends, and model comparison views — to support faster experimentation.",
+      "Implemented evaluation analytics (confusion matrix, throughput/latency trends, and model comparison views) to support faster experimentation.",
     ],
     tech: ["Python", "React", "Federated Learning", "WebSockets", "Time Series"],
     categories: ["Data & ML", "Full-Stack"],

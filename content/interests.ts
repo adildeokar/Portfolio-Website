@@ -10,7 +10,7 @@ export const interests: Interest[] = [
   {
     name: "Chess",
     icon: "crown",
-    blurb: "Strategy and calculation — the same muscles I use for system design.",
+    blurb: "Strategy and calculation, the same muscles I use for system design.",
   },
   {
     name: "Event Management",
@@ -30,17 +30,17 @@ export const interests: Interest[] = [
   {
     name: "Rifle Shooting",
     icon: "target",
-    blurb: "State-level shooter (Pune) — precision under pressure.",
+    blurb: "State-level shooter (Pune), precision under pressure.",
   },
 ];
 
 /** Personal / sporting achievements (human counterpoint to the tech wins). */
 export const personalAchievements: string[] = [
-  "National Level Basketball — Maharashtra",
-  "State Rifle Shooter — Pune",
+  "National Level Basketball (Maharashtra)",
+  "State Rifle Shooter (Pune)",
   "3× Best Basketball Player Award",
-  "School Team Captain — Basketball, Badminton, Volleyball & Cricket",
-  "House Captain — Bishop's School",
+  "School Team Captain: Basketball, Badminton, Volleyball & Cricket",
+  "House Captain, Bishop's School",
 ];
 
 /** Animated quick-stats strip on the home page. */

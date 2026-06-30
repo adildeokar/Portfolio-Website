@@ -72,7 +72,7 @@ export interface Project {
   /** key metric callout, e.g. "90–95% wagon utilization" */
   metric?: string;
   timeframe?: string;
-  /** image paths under /public/images/projects/<slug>/ — used with placeholder fallback */
+  /** image paths under /public/images/projects/<slug>/, used with placeholder fallback */
   images: { src: string; alt: string }[];
   links: ProjectLink[];
   featured?: boolean;

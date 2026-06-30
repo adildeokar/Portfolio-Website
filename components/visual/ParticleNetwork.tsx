@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Lightweight interactive "AI agent network" canvas.
- * Nodes drift, link to nearby nodes, and gently react to the cursor — evoking
+ * Nodes drift, link to nearby nodes, and gently react to the cursor, evoking
  * agents collaborating. Pure canvas (no Three.js) so it stays fast and exports
  * statically. Disabled for prefers-reduced-motion (static fallback shown).
  */

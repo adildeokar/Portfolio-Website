@@ -5,11 +5,12 @@ import { GradientBlobs } from "@/components/ui/Backdrop";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hobbies } from "@/components/sections/Hobbies";
 import { ResumeButton } from "@/components/ui/ResumeButton";
+import { SocialButtons } from "@/components/ui/SocialButtons";
 
 export const metadata: Metadata = {
   title: "Beyond Code",
   description:
-    "The person behind the projects — Adil Deokar's story, interests, and the sports and hobbies that keep him sharp.",
+    "The person behind the projects: Adil Deokar's story, interests, and the sports and hobbies that keep him sharp.",
 };
 
 export default function AboutPage() {
@@ -31,8 +32,9 @@ export default function AboutPage() {
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-muted">{bio}</p>
             <p className="mt-4 text-base leading-relaxed text-muted">{bioLong}</p>
-            <div className="mt-7">
+            <div className="mt-7 flex flex-wrap items-center gap-3">
               <ResumeButton variant="solid" />
+              <SocialButtons size="md" />
             </div>
           </Reveal>
 

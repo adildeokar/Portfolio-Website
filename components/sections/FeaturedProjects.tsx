@@ -24,7 +24,7 @@ export function FeaturedProjects() {
               <span className="text-accent-gradient">projects</span>
             </>
           }
-          description="A few builds I'm proud of — from national-hackathon-winning agent systems to edge AI."
+          description="A few builds I'm proud of, from national-hackathon-winning agent systems to edge AI."
           className="mb-0"
         />
         <Link

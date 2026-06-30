@@ -10,6 +10,7 @@ import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 import { ResumeButton } from "../ui/ResumeButton";
+import { SocialButtons } from "../ui/SocialButtons";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -74,7 +75,7 @@ export function Navbar() {
             href="/"
             data-cursor="hover"
             className="group flex items-center gap-2 pl-2 font-display text-sm font-semibold tracking-tight"
-            aria-label="Adil Deokar — home"
+            aria-label="Adil Deokar home"
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-gradient font-mono text-xs text-accent-fg shadow-glow">
               AD
@@ -118,6 +119,7 @@ export function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-2">
+            <SocialButtons size="sm" className="hidden md:flex" />
             <ThemeToggle />
             <div className="hidden sm:block">
               <ResumeButton compact />
@@ -159,7 +161,10 @@ export function Navbar() {
               <div className="mt-2 px-1 pb-1 sm:hidden">
                 <ResumeButton className="w-full justify-center" />
               </div>
-              <p className="px-4 pt-2 font-mono text-[11px] text-faint">
+              <div className="flex items-center gap-2 px-3 pt-3 md:hidden">
+                <SocialButtons withLabel className="w-full [&>a]:flex-1 [&>a]:justify-center" />
+              </div>
+              <p className="px-4 pt-3 font-mono text-[11px] text-faint">
                 {site.email}
               </p>
             </div>

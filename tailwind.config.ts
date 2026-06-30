@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss";
 /**
  * Design-token driven Tailwind theme.
  * Colors are wired to CSS variables (defined in app/globals.css) so light and
- * dark mode are *distinct, intentional palettes* — not a simple invert.
+ * dark mode are *distinct, intentional palettes*, not a simple invert.
  *
  * To re-skin the whole site, edit the HSL variables in globals.css.
  */

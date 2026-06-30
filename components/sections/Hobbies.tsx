@@ -28,7 +28,7 @@ export function Hobbies() {
 
   return (
     <div className="space-y-20">
-      {/* Interests — horizontal scroll-snap row */}
+      {/* Interests: horizontal scroll-snap row */}
       <div>
         <Reveal className="mb-8">
           <span className="kicker flex items-center gap-2">

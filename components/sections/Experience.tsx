@@ -25,7 +25,7 @@ export function Experience() {
             <span className="text-accent-gradient">shipped</span>
           </>
         }
-        description="Four internships across AI, full-stack, and product — reverse-chronological."
+        description="Four internships across AI, full-stack, and product, reverse-chronological."
       />
 
       <div ref={ref} className="relative pl-2">

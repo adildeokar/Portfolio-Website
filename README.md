@@ -1,6 +1,6 @@
-# Adil Deokar — Portfolio
+# Adil Deokar Portfolio
 
-A production-grade, highly animated personal portfolio for **Adil Deokar** — AI Developer · Software Developer · AI Product Manager.
+A production-grade, highly animated personal portfolio for **Adil Deokar**, AI Developer · Software Developer · AI Product Manager.
 
 Built to be **content-driven and modular**: all resume content lives in typed data files under [`/content`](./content), so updating the site means editing data, not components.
 
@@ -16,7 +16,7 @@ Built to be **content-driven and modular**: all resume content lives in typed da
 | Theme          | `next-themes` (class strategy, no flash)                          |
 | Icons          | `lucide-react`                                                    |
 
-> **A note on the stack:** the brief suggested GSAP + React Three Fiber. I used **Framer Motion** for all sequenced/scroll animation and a **hand-rolled `<canvas>` particle network** for the hero's "AI agent" visual instead. This keeps the bundle light, the static export bullet-proof, and reduced-motion fallbacks trivial — while delivering the same (or better) "wow". Everything else follows the brief. Swapping in GSAP/R3F later is isolated to the hero/visual components.
+> **A note on the stack:** the brief suggested GSAP + React Three Fiber. I used **Framer Motion** for all sequenced/scroll animation and a **hand-rolled `<canvas>` particle network** for the hero's "AI agent" visual instead. This keeps the bundle light, the static export bullet-proof, and reduced-motion fallbacks trivial, while delivering the same (or better) "wow". Everything else follows the brief. Swapping in GSAP/R3F later is isolated to the hero/visual components.
 
 ---
 
@@ -61,7 +61,7 @@ Everything is typed (see [`content/types.ts`](./content/types.ts)).
 1. Open [`content/projects.ts`](./content/projects.ts).
 2. Copy an existing object, give it a unique `slug`, and edit the fields.
 3. Drop screenshots into `public/images/projects/<slug>/` and reference them in `images`.
-   Until the files exist, a styled **"image coming soon"** placeholder renders automatically — the layout never looks broken.
+   Until the files exist, a styled **"image coming soon"** placeholder renders automatically. The layout never looks broken.
 
 The Projects page, category filters, and detail modal all update themselves.
 
@@ -78,7 +78,7 @@ The Projects page, category filters, and detail modal all update themselves.
 
 Replace **`public/resume/Adil_Deokar_Resume.pdf`** with your file, keeping the same name (or update `resumePath` in `content/site.ts`). The download buttons in the Nav, Hero, and Footer pick it up automatically.
 
-> The Rake Optima project links to `public/projects/Rake-Optima-Presentation-SIH-2025.pdf` — drop that PDF in to enable the link.
+> The Rake Optima project links to `public/projects/Rake-Optima-Presentation-SIH-2025.pdf`. Drop that PDF in to enable the link.
 
 ### Swap the profile photo
 
@@ -96,7 +96,7 @@ Replace **`public/images/profile.jpg`** with a **square, high-resolution** photo
 ### Vercel (recommended)
 
 1. Push to GitHub and import the repo on [vercel.com](https://vercel.com).
-2. Zero config needed — `vercel.json` sets the framework, build command, and `out` output dir.
+2. Zero config needed. `vercel.json` sets the framework, build command, and `out` output dir.
 3. Leave `NEXT_PUBLIC_BASE_PATH` **unset** (root domain).
 
 ### GitHub Pages

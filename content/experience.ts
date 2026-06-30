@@ -5,7 +5,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Development & AI Intern",
     company: "Monkstack Solutions LLP",
-    period: "Feb 2026 — Jun 2026",
+    period: "Feb 2026 - Jun 2026",
     summary:
       "Full-stack product delivery with a Three.js experience and end-to-end Azure deployment.",
     bullets: [
@@ -18,7 +18,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Developer",
     company: "DKC DevKnight Technologies Pvt Ltd",
-    period: "Oct 2025 — Feb 2026",
+    period: "Oct 2025 - Feb 2026",
     summary:
       "Architected scalable AI systems and intelligent automation frameworks.",
     bullets: [
@@ -31,9 +31,9 @@ export const experience: ExperienceItem[] = [
   {
     role: "Lead Tech & AI",
     company: "Hayy Media Pvt Ltd",
-    period: "Oct 2024 — Oct 2025",
+    period: "Oct 2024 - Oct 2025",
     summary:
-      "Owned HayyAI end-to-end as a live SaaS product — architecture to production rollout.",
+      "Owned HayyAI end-to-end as a live SaaS product, from architecture to production rollout.",
     bullets: [
       "Led end-to-end development and launch of HayyAI as a live SaaS product, owning architecture, model integration, and production rollout.",
       "Built CI/CD pipelines with logging, metrics, and error monitoring enabling weekly releases without regressions.",
@@ -45,7 +45,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "SDE Intern",
     company: "SoftTech Engineers Ltd.",
-    period: "Jun 2024 — Aug 2024",
+    period: "Jun 2024 - Aug 2024",
     summary:
       "Enhanced live software products with high-value, time-saving features.",
     bullets: [

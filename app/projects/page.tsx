@@ -7,7 +7,7 @@ import { projects } from "@/content/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected projects by Adil Deokar — multi-agent AI systems, edge AI on Jetson Orin, optimization engines, and full-stack ML platforms.",
+    "Selected projects by Adil Deokar: multi-agent AI systems, edge AI on Jetson Orin, optimization engines, and full-stack ML platforms.",
 };
 
 export default function ProjectsPage() {
