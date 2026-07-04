@@ -1,23 +1,17 @@
 /**
- * Next.js config, configured for fully static export so the site can be
- * hosted for free on GitHub Pages (or any static host) with zero backend.
- *
- * Custom domain (adildeokar.com): leave NEXT_PUBLIC_BASE_PATH empty (default).
- * Project page only (username.github.io/repo-name): set
- * NEXT_PUBLIC_BASE_PATH="/repo-name" before building.
+ * Next.js config for Vercel (native Next.js runtime).
+ * Leave NEXT_PUBLIC_BASE_PATH empty for the custom domain adildeokar.com.
  */
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
   reactStrictMode: true,
   trailingSlash: true,
-  basePath: basePath,
+  basePath: basePath || undefined,
   assetPrefix: basePath || undefined,
   images: {
-    // Static export can't use the Next.js image optimization server.
     unoptimized: true,
   },
   env: {
