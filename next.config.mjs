@@ -1,11 +1,10 @@
 /**
  * Next.js config, configured for fully static export so the site can be
- * hosted for free on Vercel OR GitHub Pages with zero backend.
+ * hosted for free on GitHub Pages (or any static host) with zero backend.
  *
- * GitHub Pages note:
- *   When deploying to a PROJECT page (username.github.io/repo-name), set the
- *   environment variable NEXT_PUBLIC_BASE_PATH="/repo-name" before building.
- *   On Vercel (or a custom domain / user-page) leave it empty.
+ * Custom domain (adildeokar.com): leave NEXT_PUBLIC_BASE_PATH empty (default).
+ * Project page only (username.github.io/repo-name): set
+ * NEXT_PUBLIC_BASE_PATH="/repo-name" before building.
  */
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";

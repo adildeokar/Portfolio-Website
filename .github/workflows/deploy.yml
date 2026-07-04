@@ -31,11 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build (static export)
-        # For a PROJECT page (username.github.io/<repo>), the basePath must be /<repo>.
-        # ${{ github.event.repository.name }} resolves to the repo name automatically.
-        # If you deploy to a USER/ORG page or a custom domain, set NEXT_PUBLIC_BASE_PATH to "" instead.
+        # Empty basePath for custom domain (adildeokar.com).
+        # For project-page only (username.github.io/repo), use: /${{ github.event.repository.name }}
         env:
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_BASE_PATH: ""
         run: npm run build
 
       - name: Disable Jekyll (serve _next folder)
