@@ -6,6 +6,7 @@ import { Trophy, Star, ChevronDown, BadgeCheck } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { awards, featuredCerts, certGroups } from "@/content/certifications";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { cn } from "@/lib/utils";
 
 const issuerStyles: Record<string, string> = {
@@ -33,9 +34,8 @@ export function Certifications() {
       <RevealGroup className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {awards.map((award) => (
           <RevealItem key={award.title}>
-            <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-surface to-surface-2 p-5 transition-colors hover:border-accent/40">
-              <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-accent/10 blur-2xl transition-opacity group-hover:opacity-100" />
-              <Trophy className="mb-3 h-6 w-6 text-accent" />
+            <SpotlightCard className="group h-full p-5 hover:border-accent/40">
+              <Trophy className="mb-3 h-6 w-6 text-accent transition-transform duration-300 group-hover/spot:-translate-y-1 group-hover/spot:rotate-[-8deg]" />
               <h3 className="font-display text-sm font-semibold leading-snug">
                 {award.title}
               </h3>
@@ -47,7 +47,7 @@ export function Certifications() {
                   {award.year}
                 </span>
               )}
-            </div>
+            </SpotlightCard>
           </RevealItem>
         ))}
       </RevealGroup>

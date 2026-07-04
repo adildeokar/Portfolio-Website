@@ -21,7 +21,7 @@ export function RoleRotator({ roles }: { roles: string[] }) {
   }
 
   return (
-    <span className="relative inline-flex h-6 items-center overflow-hidden">
+    <span className="relative inline-flex h-7 items-center overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.span
           key={roles[index]}

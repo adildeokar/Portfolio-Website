@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Design-token driven Tailwind theme.
+ * Design-token driven Tailwind theme ("Obsidian Ember / Aurora").
  * Colors are wired to CSS variables (defined in app/globals.css) so light and
  * dark mode are *distinct, intentional palettes*, not a simple invert.
  *
@@ -27,6 +27,7 @@ const config: Config = {
         faint: "hsl(var(--faint) / <alpha-value>)",
         accent: "hsl(var(--accent) / <alpha-value>)",
         "accent-2": "hsl(var(--accent-2) / <alpha-value>)",
+        "accent-3": "hsl(var(--accent-3) / <alpha-value>)",
         "accent-fg": "hsl(var(--accent-fg) / <alpha-value>)",
       },
       fontFamily: {
@@ -41,14 +42,19 @@ const config: Config = {
       },
       boxShadow: {
         glow: "0 0 40px -10px hsl(var(--accent) / 0.5)",
-        "glow-lg": "0 0 80px -20px hsl(var(--accent) / 0.55)",
-        card: "0 1px 0 0 hsl(var(--border) / 0.6), 0 18px 40px -24px rgba(0,0,0,0.45)",
+        "glow-lg": "0 0 80px -18px hsl(var(--accent) / 0.6)",
+        "glow-2": "0 0 60px -14px hsl(var(--accent-2) / 0.5)",
+        card: "0 1px 0 0 hsl(var(--border) / 0.6), 0 18px 40px -24px rgba(0,0,0,0.5)",
       },
       backgroundImage: {
         "grid-pattern":
           "linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px)",
+        "dot-pattern":
+          "radial-gradient(hsl(var(--border) / 0.9) 1px, transparent 1px)",
         "accent-gradient":
-          "linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-2)))",
+          "linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-2)), hsl(var(--accent-3)))",
+        "aurora-mesh":
+          "radial-gradient(40% 40% at 20% 20%, hsl(var(--accent) / 0.35), transparent 70%), radial-gradient(40% 40% at 80% 30%, hsl(var(--accent-2) / 0.32), transparent 70%), radial-gradient(45% 45% at 50% 85%, hsl(var(--accent-3) / 0.30), transparent 70%)",
       },
       keyframes: {
         "fade-up": {
@@ -76,6 +82,25 @@ const config: Config = {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-rev": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "pulse-ring": {
+          "0%": { transform: "scale(0.9)", opacity: "0.6" },
+          "70%, 100%": { transform: "scale(1.6)", opacity: "0" },
+        },
+        "aurora-shift": {
+          "0%, 100%": { transform: "translate3d(0,0,0) rotate(0deg)" },
+          "50%": { transform: "translate3d(4%, -4%, 0) rotate(8deg)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out both",
@@ -83,6 +108,11 @@ const config: Config = {
         "blob-drift": "blob-drift 18s ease-in-out infinite",
         "scroll-dot": "scroll-dot 1.6s ease-in-out infinite",
         "gradient-pan": "gradient-pan 6s ease infinite",
+        "spin-slow": "spin-slow 14s linear infinite",
+        marquee: "marquee 32s linear infinite",
+        "marquee-rev": "marquee-rev 32s linear infinite",
+        "pulse-ring": "pulse-ring 2.4s ease-out infinite",
+        "aurora-shift": "aurora-shift 16s ease-in-out infinite",
       },
     },
   },

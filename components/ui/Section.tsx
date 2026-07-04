@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
+import { ScrambleText } from "./ScrambleText";
 
 interface SectionProps {
   id?: string;
@@ -44,8 +45,8 @@ export function SectionHeader({
       )}
     >
       <span className="kicker flex items-center gap-2">
-        <span className="inline-block h-px w-6 bg-accent/60" />
-        {kicker}
+        <span className="inline-block h-px w-6 bg-gradient-to-r from-accent to-accent-2" />
+        <ScrambleText text={kicker} />
       </span>
       <h2 className="font-display text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl text-balance">
         {title}

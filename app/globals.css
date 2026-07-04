@@ -4,40 +4,48 @@
 
 /*
  * ============================================================
- *  DESIGN TOKENS
- *  Two distinct, intentional palettes (light + dark).
+ *  DESIGN TOKENS - "Titanium / Steel Aurora"
+ *  A confident, professional palette: azure blue -> cyan ->
+ *  teal accents on a cool porcelain (light) and deep graphite
+ *  navy (dark) base. Two distinct, intentional themes.
  *  Edit these HSL triples to re-skin the entire site.
  * ============================================================
  */
 @layer base {
   :root {
-    /* Light theme: warm paper white with electric indigo accent */
-    --bg: 250 50% 99%;
-    --bg-soft: 250 40% 97%;
+    /* Light theme: cool porcelain */
+    --bg: 210 32% 98%;
+    --bg-soft: 210 26% 95%;
     --surface: 0 0% 100%;
-    --surface-2: 250 35% 96%;
-    --border: 250 20% 88%;
-    --fg: 250 30% 12%;
-    --muted: 250 12% 38%;
-    --faint: 250 10% 55%;
-    --accent: 256 90% 60%;
-    --accent-2: 190 95% 45%;
+    --surface-2: 210 24% 96%;
+    --border: 214 20% 86%;
+    --fg: 220 32% 12%;
+    --muted: 216 14% 38%;
+    --faint: 216 10% 52%;
+    /* steel aurora triad */
+    --accent: 212 92% 46%;     /* azure blue */
+    --accent-2: 192 90% 42%;   /* cyan */
+    --accent-3: 168 68% 40%;   /* teal */
     --accent-fg: 0 0% 100%;
+    --ring: 212 92% 46%;
   }
 
   .dark {
-    /* Dark theme: deep space navy/charcoal, not pure black */
-    --bg: 240 24% 6%;
-    --bg-soft: 240 22% 8%;
-    --surface: 240 20% 10%;
-    --surface-2: 240 18% 13%;
-    --border: 240 14% 20%;
-    --fg: 250 30% 96%;
-    --muted: 245 12% 70%;
-    --faint: 245 10% 52%;
-    --accent: 256 95% 70%;
-    --accent-2: 185 95% 55%;
-    --accent-fg: 240 30% 8%;
+    /* Dark theme: deep graphite navy, cool not muddy */
+    --bg: 218 27% 7%;
+    --bg-soft: 218 24% 9%;
+    --surface: 217 22% 11%;
+    --surface-2: 216 20% 14%;
+    --border: 216 16% 23%;
+    --fg: 210 30% 96%;
+    --muted: 214 14% 74%;
+    --faint: 214 10% 54%;
+    /* steel aurora triad (brighter for dark) */
+    --accent: 205 100% 62%;    /* bright azure */
+    --accent-2: 188 92% 54%;   /* cyan */
+    --accent-3: 166 78% 48%;   /* teal */
+    --accent-fg: 218 45% 8%;
+    --ring: 205 100% 62%;
   }
 
   * {
@@ -56,20 +64,17 @@
     overflow-x: hidden;
   }
 
-  /* Selection */
   ::selection {
-    background-color: hsl(var(--accent) / 0.3);
+    background-color: hsl(var(--accent) / 0.28);
     color: hsl(var(--fg));
   }
 
-  /* Themed, visible focus states (accessibility) */
   :focus-visible {
     outline: 2px solid hsl(var(--accent));
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -78,12 +83,23 @@
     background: hsl(var(--bg-soft));
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
+    background: linear-gradient(
+      hsl(var(--accent) / 0.5),
+      hsl(var(--accent-2) / 0.5)
+    );
     border-radius: 999px;
     border: 2px solid hsl(var(--bg-soft));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent) / 0.6);
+    background: linear-gradient(hsl(var(--accent)), hsl(var(--accent-2)));
+  }
+
+  /* Hide the native cursor when the custom cursor is active (fine pointers) */
+  @media (pointer: fine) {
+    html.has-custom-cursor,
+    html.has-custom-cursor * {
+      cursor: none !important;
+    }
   }
 }
 
@@ -94,11 +110,11 @@
 
   .glass {
     background: hsl(var(--surface) / 0.6);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px) saturate(1.4);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
   }
 
-  /* Gradient text for headings */
+  /* Tri-tone gradient text for display headings */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
@@ -106,23 +122,25 @@
       hsl(var(--fg)),
       hsl(var(--accent)),
       hsl(var(--accent-2)),
+      hsl(var(--accent-3)),
       hsl(var(--fg))
     );
-    background-size: 200% auto;
+    background-size: 250% auto;
   }
 
   .text-accent-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(
-      120deg,
+      110deg,
       hsl(var(--accent)),
-      hsl(var(--accent-2))
+      hsl(var(--accent-2)),
+      hsl(var(--accent-3))
     );
+    background-size: 200% auto;
   }
 
-  /* Mono "kicker" label used above section titles */
   .kicker {
-    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent;
+    @apply font-mono text-xs uppercase tracking-[0.28em] text-accent;
   }
 
   .card-base {
@@ -130,7 +148,58 @@
   }
 
   .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/70 px-3 py-1 font-mono text-xs text-muted transition-colors;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2/70 px-3 py-1 font-mono text-xs text-muted transition-all duration-300;
+  }
+
+  /* Gradient hairline border used for "premium" chips/cards */
+  .border-aurora {
+    border-image: linear-gradient(
+        120deg,
+        hsl(var(--accent)),
+        hsl(var(--accent-2)),
+        hsl(var(--accent-3))
+      )
+      1;
+  }
+
+  /* Animated conic gradient ring (used behind portrait / feature blocks) */
+  .aurora-ring {
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--accent)),
+      hsl(var(--accent-2)),
+      hsl(var(--accent-3)),
+      hsl(var(--accent))
+    );
+  }
+
+  /* Primary CTA with animated sheen */
+  .btn-aurora {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(
+      110deg,
+      hsl(var(--accent)),
+      hsl(var(--accent-2))
+    );
+    background-size: 200% auto;
+    color: hsl(var(--accent-fg));
+  }
+  .btn-aurora::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 20%,
+      hsl(0 0% 100% / 0.35) 50%,
+      transparent 80%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+  }
+  .btn-aurora:hover::after {
+    transform: translateX(120%);
   }
 }
 
@@ -142,7 +211,7 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -151,8 +220,29 @@
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
 
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .perspective {
+    perspective: 1000px;
   }
 }
 

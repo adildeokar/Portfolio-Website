@@ -3,6 +3,7 @@
 import { GraduationCap } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { education } from "@/content/education";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
 export function Education() {
@@ -21,8 +22,8 @@ export function Education() {
       <RevealGroup className="grid gap-5 md:grid-cols-3">
         {education.map((item) => (
           <RevealItem key={item.institution}>
-            <div className="card-base group flex h-full flex-col p-6 transition-colors hover:border-accent/40">
-              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20">
+            <SpotlightCard className="group flex h-full flex-col p-6 hover:border-accent/40">
+              <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-transform duration-300 group-hover/spot:-translate-y-1 group-hover/spot:scale-110">
                 <GraduationCap className="h-5 w-5" />
               </span>
               <h3 className="font-display text-base font-semibold leading-snug">
@@ -39,7 +40,7 @@ export function Education() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </SpotlightCard>
           </RevealItem>
         ))}
       </RevealGroup>

@@ -51,15 +51,18 @@ export function Hobbies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.06, duration: 0.5 }}
-                whileHover={reduce ? undefined : { y: -6 }}
-                className="group relative min-w-[78%] snap-center overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-surface to-surface-2 p-6 sm:min-w-0"
+                whileHover={reduce ? undefined : { y: -8, rotate: -0.6 }}
+                className="group relative min-w-[78%] snap-center overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-surface to-surface-2 p-6 transition-colors hover:border-accent/40 sm:min-w-0"
               >
-                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent/15 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="font-display text-xl font-semibold">{interest.name}</h3>
                 <p className="mt-2 text-sm text-muted">{interest.blurb}</p>
+                <span className="mt-4 block font-mono text-[10px] uppercase tracking-widest text-faint opacity-0 transition-opacity group-hover:opacity-100">
+                  0{i + 1} / 0{interests.length}
+                </span>
               </motion.div>
             );
           })}

@@ -9,6 +9,7 @@ import { navLinks } from "@/content/nav";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+import { CommandPaletteTrigger } from "./CommandPalette";
 import { ResumeButton } from "../ui/ResumeButton";
 import { SocialButtons } from "../ui/SocialButtons";
 
@@ -119,7 +120,8 @@ export function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-2">
-            <SocialButtons size="sm" className="hidden md:flex" />
+            <CommandPaletteTrigger className="hidden md:inline-flex" />
+            <SocialButtons size="sm" className="hidden lg:flex" />
             <ThemeToggle />
             <div className="hidden sm:block">
               <ResumeButton compact />

@@ -39,7 +39,7 @@ export function Footer() {
             <a
               href={`mailto:${site.email}`}
               data-cursor="hover"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-fg shadow-glow transition-shadow hover:shadow-glow-lg"
+              className="btn-aurora group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold shadow-glow transition-shadow hover:shadow-glow-lg"
             >
               <Mail className="h-4 w-4" />
               {site.email}
