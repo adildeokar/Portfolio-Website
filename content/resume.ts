@@ -169,7 +169,7 @@ export const roles: Role[] = [
   {
     company: "Whirlpool Corporation",
     title: "Software Development Intern, AI & Automation",
-    dates: "Aug–Nov 2026",
+    dates: "Aug 2026–Present",
     focus: ["ai", "web"],
     points: [
       "Designing AI-driven solutions that automate internal engineering workflows.",
