@@ -513,14 +513,24 @@ button {
 
 /* The live thing: briefing the page with the role you are hiring for. */
 html[data-focus] [data-tags] {
-  transition: opacity var(--t-ui) var(--ease-out);
+  transition:
+    opacity var(--t-ui) var(--ease-out),
+    box-shadow var(--t-ui) var(--ease-out);
 }
 
-html[data-focus="ai"] [data-tags]:not([data-tags~="ai"]),
-html[data-focus="web"] [data-tags]:not([data-tags~="web"]),
-html[data-focus="edge"] [data-tags]:not([data-tags~="edge"]),
-html[data-focus="data"] [data-tags]:not([data-tags~="data"]) {
-  opacity: 0.28;
+/* A list fades its misses only when it has a match, so no list goes grey all over. */
+html[data-focus="ai"] :is(.wall, .bars):has([data-tags~="ai"]) [data-tags]:not([data-tags~="ai"]),
+html[data-focus="web"] :is(.wall, .bars):has([data-tags~="web"]) [data-tags]:not([data-tags~="web"]),
+html[data-focus="edge"] :is(.wall, .bars):has([data-tags~="edge"]) [data-tags]:not([data-tags~="edge"]),
+html[data-focus="data"] :is(.wall, .bars):has([data-tags~="data"]) [data-tags]:not([data-tags~="data"]) {
+  opacity: 0.4;
+}
+
+html[data-focus="ai"] .bar[data-tags~="ai"],
+html[data-focus="web"] .bar[data-tags~="web"],
+html[data-focus="edge"] .bar[data-tags~="edge"],
+html[data-focus="data"] .bar[data-tags~="data"] {
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 html[data-focus="ai"] .tile[data-tags~="ai"] img,
