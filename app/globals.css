@@ -890,24 +890,22 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
 
 /* ───────────────────────── Wins ───────────────────────── */
 
+/* The title's two lines start on the ledger's first and second text columns. */
 .wins {
+  --c1: 16.66%;
+  --cell: 12px;
   background: var(--surface);
   padding: var(--section) var(--m);
 }
 
-.wins__title {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: var(--col-gap);
-}
-
 .wins__title span {
-  grid-column: 1 / span 9;
+  display: block;
+  margin-left: calc(var(--cell) - 0.04em);
   white-space: nowrap;
 }
 
 .wins__title span + span {
-  grid-column: 3 / span 10;
+  margin-left: calc(var(--c1) + var(--cell) - 0.04em);
 }
 
 .ledger {
@@ -919,7 +917,7 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
 }
 
 .ledger col.c1 {
-  width: 16.66%;
+  width: var(--c1);
 }
 
 .ledger col.c2 {
@@ -1015,8 +1013,8 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
 }
 
 @media (max-width: 1100px) {
-  .ledger col.c1 {
-    width: 14%;
+  .wins {
+    --c1: 14%;
   }
 
   .ledger col.c2,
@@ -1041,12 +1039,10 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
     font-size: 11vw;
   }
 
-  .wins__title span {
-    display: block;
-  }
-
+  /* Rows stack on phones, so both lines start on the row text. */
+  .wins__title span,
   .wins__title span + span {
-    padding-left: 0.6em;
+    margin-left: calc(14px - 0.04em);
   }
 
   .ledger,
