@@ -1,25 +1,25 @@
-import { Hero } from "@/components/sections/Hero";
-import { About } from "@/components/sections/About";
-import { Stats } from "@/components/sections/Stats";
-import { TechMarquee } from "@/components/sections/TechMarquee";
-import { Skills } from "@/components/sections/Skills";
-import { Experience } from "@/components/sections/Experience";
-import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
-import { Certifications } from "@/components/sections/Certifications";
-import { Education } from "@/components/sections/Education";
+import { Hero } from "@/components/Hero";
+import { Work } from "@/components/Work";
+import { Record } from "@/components/Record";
+import { Wins } from "@/components/Wins";
+import { Life } from "@/components/Life";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { Motion } from "@/components/Motion";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Stats />
-      <TechMarquee />
-      <Skills />
-      <Experience />
-      <FeaturedProjects />
-      <Certifications />
-      <Education />
+      <main>
+        <Work />
+        <Record />
+        <Wins />
+        <Life />
+        <Contact />
+      </main>
+      <Footer />
+      <Motion />
     </>
   );
 }

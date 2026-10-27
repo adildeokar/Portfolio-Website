@@ -1,105 +1,58 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { SmoothScroll } from "@/components/layout/SmoothScroll";
-import { CustomCursor } from "@/components/layout/CustomCursor";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
-import { BackToTop } from "@/components/layout/BackToTop";
-import { CommandPalette } from "@/components/layout/CommandPalette";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { site, bio } from "@/content/site";
 
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-const siteUrl = "https://adildeokar.com";
+const siteUrl = "https://www.adildeokar.com";
+const description =
+  "Adil Deokar is a software and AI engineer in Pune building multi-agent, edge AI and cloud systems. Smart India Hackathon 2024 winner; now at Whirlpool Corporation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: {
-    default: `${site.name} | ${site.roles.join(" · ")}`,
-    template: `%s | ${site.name}`,
-  },
-  description: bio,
+  title: "Adil Deokar, software and AI engineer",
+  description,
   keywords: [
     "Adil Deokar",
-    "AI Developer",
-    "Software Developer",
-    "AI Product Manager",
-    "Agentic AI",
-    "Machine Learning",
+    "software engineer",
+    "AI engineer",
+    "multi-agent systems",
+    "edge AI",
     "Next.js",
     "Pune",
   ],
-  authors: [{ name: site.name, url: siteUrl }],
-  creator: site.name,
+  authors: [{ name: "Adil Deokar", url: siteUrl }],
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: siteUrl,
-    title: `${site.name} | ${site.roles.join(" · ")}`,
-    description: bio,
-    siteName: site.name,
+    siteName: "Adil Deokar",
+    title: "Adil Deokar, software and AI engineer",
+    description,
+    images: [{ url: "/images/profile.jpg", width: 400, height: 400, alt: "Adil Deokar" }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: `${site.name} | ${site.roles.join(" · ")}`,
-    description: bio,
+    card: "summary",
+    title: "Adil Deokar, software and AI engineer",
+    description,
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f9fb" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
-  ],
+  themeColor: "#f7f9fa",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${sans.variable} ${display.variable} ${mono.variable} font-sans antialiased grain`}
-      >
-        <ThemeProvider>
-          <SmoothScroll />
-          <ScrollProgress />
-          <CustomCursor />
-          <CommandPalette />
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-fg"
-          >
-            Skip to content
-          </a>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-          <BackToTop />
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

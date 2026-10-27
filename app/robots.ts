@@ -1,12 +1,10 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://adildeokar.com";
-
 export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: "https://www.adildeokar.com/sitemap.xml",
   };
 }
