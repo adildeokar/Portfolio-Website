@@ -890,22 +890,17 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
 
 /* ───────────────────────── Wins ───────────────────────── */
 
-/* The title's two lines start on the ledger's first and second text columns. */
 .wins {
   --c1: 16.66%;
-  --cell: 12px;
   background: var(--surface);
   padding: var(--section) var(--m);
 }
 
+/* Both title lines start flush on the ledger's first text column. */
 .wins__title span {
   display: block;
-  margin-left: calc(var(--cell) - 0.04em);
+  margin-left: calc(12px - 0.04em);
   white-space: nowrap;
-}
-
-.wins__title span + span {
-  margin-left: calc(var(--c1) + var(--cell) - 0.04em);
 }
 
 .ledger {
@@ -1040,8 +1035,7 @@ html[data-focus="data"] .tile[data-tags~="data"] img {
   }
 
   /* Rows stack on phones, so both lines start on the row text. */
-  .wins__title span,
-  .wins__title span + span {
+  .wins__title span {
     margin-left: calc(14px - 0.04em);
   }
 
